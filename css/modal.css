@@ -1,0 +1,92 @@
+#modal, #modal-edit,#modal-agenda{
+    background-color:rgba(0,0,0,.7);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: block;
+    transform: translateY(-100%);
+}
+
+#modal>.close,#modal-edit>.close,#modal-agenda>.close{
+    width: 50px;
+    height: 50px;
+    background-color:rgba(255,255, 255, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 150px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+.close:hover{
+    cursor: pointer;
+}
+.close::before,.close::after{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    
+    display: block;
+    height: 2px;
+    width: 30px;
+    background-color:rgba(5, 4, 4, 1);}
+
+.close::before{
+    transform: rotate(45deg);
+}
+
+.close::after{
+    transform: rotate(-45deg);
+}
+
+.modal__container
+{
+    transform-origin:center;
+    transform: translateX(35%) translateY(50%);
+}
+
+.modal__container>form{
+    border: 1px solid rgb(88, 84, 84);
+    background-color:rgba(5, 4, 4, 0.6);
+    border-radius: 10px;
+    width: 30%;
+    height: 50vh;
+    padding: 30px;
+    display: flex;
+    flex-direction:column;
+    align-items: stretch; 
+    justify-content: space-around; 
+}
+
+.modal__form>input{
+    padding: 10px;
+}
+
+.modal__form>label{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;    
+}
+h3.modal__head{
+    margin-bottom: 10px;
+}
+.modal__form>*{
+    margin-bottom: 10px;
+}
+
+.modal__form>h3,.modal__form>button{
+    align-self: center;
+}
+#error{
+    color:red;
+    align-self:start;
+}
+
+#modal.hiden,#modal-edit.hiden{
+    transform: translateY(0%);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
